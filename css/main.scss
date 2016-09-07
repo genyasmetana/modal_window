@@ -1,0 +1,214 @@
+$xsWidth: 320px;
+$smWidth: 750px;
+$mdWidth: 970px;
+$lgWidth: 1170px;
+
+$colorWhite: white;
+$modalBackground: #fff;
+$defaultRadius: 8px;
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (min-width: $xsWidth) and (max-width: $smWidth) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $smWidth + 1) and (max-width: $mdWidth - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $lgWidth) { @content; }
+  }
+}
+
+@mixin border-radius($radius: $defaultRadius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+@mixin box-shadow ($top, $left, $blur, $colour) {
+  box-shadow: $top $left $blur $colour;
+  -moz-box-shadow: $top $left $blur $colour;
+  -webkit-box-shadow: $top $left $blur $colour;
+}
+
+.main-container {
+  width: 100%;
+  text-align: center;
+}
+.modal-window__button {
+  @include border-radius();
+  border: none;
+  text-transform: capitalize;
+  display: inline-block;
+  text-align:center;
+  padding: 5px 12px;
+  color: $colorWhite;
+  transition: 300ms ease-in-out;
+  @include box-shadow(0px, 4px, 20px, #ccc);
+  font-size: 16px;
+  margin: 15px;
+  background: #aa66cc;
+  outline: none;
+
+  &:hover {
+    transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    @include box-shadow(0, 2px, 20px, #777);
+  }
+
+}
+.modalAccept-wrapper {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 56, 67, 0.5);
+  z-index:2;
+}
+#modalAccept {
+  min-width: 300px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $modalBackground;
+  z-index:3;
+
+  @include border-radius();
+  max-width: 500px;
+  min-height: 350px;
+  box-shadow: 0px 2px 4px 0 #797979, 0 0 2px 0 #797979;
+  -moz-box-shadow: 0px 2px 4px 0 #797979, 0 0 2px 0 #797979;
+  -webkit-box-shadow: 0px 2px 4px 0 #797979, 0 0 2px 0 #797979;
+}
+
+.modal-window {
+  &__header {
+    width: 100%;
+    height: 46px;
+  }
+  &__dismiss {
+    padding: 0;
+    width: 24px;
+    outline: none;
+    border: none;
+    height: 24px;
+    background: url("../img/icon-popup-close.svg") center center no-repeat;
+    margin: 11px;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
+}
+.modal-window__body {
+  width: 80%;
+  margin: 0 auto;
+
+  &__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+  }
+  &__accept {
+    margin: 0;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-size: 24px;
+    color: rgba(61, 66, 77, 1);
+    text-align: center;
+    font-weight: 400;
+  }
+}
+.modal-window__footer {
+  width: 80%;
+  margin: 0 auto;
+
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  &__left-section {
+    padding: 5px 0;
+    text-align: left;
+    float: left;
+    width: 50%;
+    @include respond-to(handhelds) {
+      text-align: center;
+      width: 100%;
+    }
+  }
+  &__right-section {
+    @include respond-to(handhelds) {
+      width: 100%;
+      text-align: center;
+    }
+    padding: 5px 0;
+    text-align: right;
+    float: right;
+    width: 50%;
+  }
+  &__button-cancel {
+    @include border-radius();
+    @include respond-to(handhelds) {
+      margin-right: 0;
+    }
+    display: inline-block;
+    border: 1px solid rgba(215, 222, 234, 1);
+    margin-right: 15px;
+    text-transform: capitalize;
+    background-color: $colorWhite;
+    font-size: 18px;
+    color: rgba(139, 147, 163, 1);
+    text-align: center;
+    padding: 7px 51px;
+    font-weight: 600;
+
+    &:hover{
+      //background-color: darken($colorWhite, 2%);
+      box-shadow: 0 3px 0 0 #eee;
+      -moz-box-shadow: 0 3px 0 0 #eee;
+      -webkit-box-shadow: 0 3px 0 0 #eee;
+    }
+  }
+  &__button-uninstall {
+    @include border-radius();
+    @include respond-to(handhelds) {
+      margin-left: 0;
+    }
+    display: inline-block;
+    border: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 51px;
+    margin-right: 0;
+    margin-left: 15px;
+    color: $colorWhite;
+    background-color: rgba(255, 59, 48, 1);
+    font-weight: 600;
+
+    &:hover {
+      box-shadow: 0 3px 0 0 #d93229;
+      -moz-box-shadow: 0 3px 0 0 #d93229;
+      -webkit-box-shadow: 0 3px 0 0 #d93229;
+    }
+  }
+}
+.modal-window__buttons {
+  outline: none;
+  transition: 0.15s ease;
+}

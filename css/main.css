@@ -1,0 +1,174 @@
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+.main-container {
+  width: 100%;
+  text-align: center; }
+
+.modal-window__button {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  border: none;
+  text-transform: capitalize;
+  display: inline-block;
+  text-align: center;
+  padding: 5px 12px;
+  color: white;
+  transition: 300ms ease-in-out;
+  box-shadow: 0px 4px 20px #ccc;
+  -moz-box-shadow: 0px 4px 20px #ccc;
+  -webkit-box-shadow: 0px 4px 20px #ccc;
+  font-size: 16px;
+  margin: 15px;
+  background: #aa66cc;
+  outline: none; }
+  .modal-window__button:hover {
+    transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    box-shadow: 0 2px 20px #777;
+    -moz-box-shadow: 0 2px 20px #777;
+    -webkit-box-shadow: 0 2px 20px #777; }
+
+.modalAccept-wrapper {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(52, 56, 67, 0.5);
+  z-index: 2; }
+
+#modalAccept {
+  min-width: 300px;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  z-index: 3;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  max-width: 500px;
+  min-height: 350px;
+  box-shadow: 0px 2px 4px 0 #797979, 0 0 2px 0 #797979;
+  -moz-box-shadow: 0px 2px 4px 0 #797979, 0 0 2px 0 #797979;
+  -webkit-box-shadow: 0px 2px 4px 0 #797979, 0 0 2px 0 #797979; }
+
+.modal-window__header {
+  width: 100%;
+  height: 46px; }
+.modal-window__dismiss {
+  padding: 0;
+  width: 24px;
+  outline: none;
+  border: none;
+  height: 24px;
+  background: url("../img/icon-popup-close.svg") center center no-repeat;
+  margin: 11px; }
+  .modal-window__dismiss:hover {
+    opacity: 0.7; }
+
+.modal-window__body {
+  width: 80%;
+  margin: 0 auto; }
+  .modal-window__body__img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px; }
+  .modal-window__body__accept {
+    margin: 0;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    font-size: 24px;
+    color: #3d424d;
+    text-align: center;
+    font-weight: 400; }
+
+.modal-window__footer {
+  width: 80%;
+  margin: 0 auto; }
+  .modal-window__footer:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  .modal-window__footer__left-section {
+    padding: 5px 0;
+    text-align: left;
+    float: left;
+    width: 50%; }
+    @media only screen and (min-width: 320px) and (max-width: 750px) {
+      .modal-window__footer__left-section {
+        text-align: center;
+        width: 100%; } }
+  .modal-window__footer__right-section {
+    padding: 5px 0;
+    text-align: right;
+    float: right;
+    width: 50%; }
+    @media only screen and (min-width: 320px) and (max-width: 750px) {
+      .modal-window__footer__right-section {
+        width: 100%;
+        text-align: center; } }
+  .modal-window__footer__button-cancel {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid #d7deea;
+    margin-right: 15px;
+    text-transform: capitalize;
+    background-color: white;
+    font-size: 18px;
+    color: #8b93a3;
+    text-align: center;
+    padding: 7px 51px;
+    font-weight: 600; }
+    @media only screen and (min-width: 320px) and (max-width: 750px) {
+      .modal-window__footer__button-cancel {
+        margin-right: 0; } }
+    .modal-window__footer__button-cancel:hover {
+      box-shadow: 0 3px 0 0 #eee;
+      -moz-box-shadow: 0 3px 0 0 #eee;
+      -webkit-box-shadow: 0 3px 0 0 #eee; }
+  .modal-window__footer__button-uninstall {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    border-radius: 8px;
+    display: inline-block;
+    border: none;
+    text-transform: capitalize;
+    font-size: 18px;
+    text-align: center;
+    padding: 8px 51px;
+    margin-right: 0;
+    margin-left: 15px;
+    color: white;
+    background-color: #ff3b30;
+    font-weight: 600; }
+    @media only screen and (min-width: 320px) and (max-width: 750px) {
+      .modal-window__footer__button-uninstall {
+        margin-left: 0; } }
+    .modal-window__footer__button-uninstall:hover {
+      box-shadow: 0 3px 0 0 #d93229;
+      -moz-box-shadow: 0 3px 0 0 #d93229;
+      -webkit-box-shadow: 0 3px 0 0 #d93229; }
+
+.modal-window__buttons {
+  outline: none;
+  transition: 0.15s ease; }
+
+/*# sourceMappingURL=main.css.map */
